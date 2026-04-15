@@ -1,271 +1,124 @@
 # ESPSmartwatch
 
-A small modern smartwatch-style device with a touchscreen, multiple sensors, and battery, built on ESP32.
+A small modern smartwatch style device built on ESP32.
 
 ## Description
 
-<!-- TODO: Add a detailed description of the device, its features, and purpose -->
-This compact device is a custom-built smartwatch-style computer featuring an ESP32 microcontroller with a [SIZE]-inch capacitive touch display. It includes multiple sensors, [LIST FEATURES], and battery headers, all designed to be worn and used throughout the day with a modern, aesthetic UI.
 
-The device runs a custom firmware with [UI LIBRARY]-based UI, featuring [LIST SCREENS AND APPS]. The interface supports [LIST GESTURE/INTERACTION TYPES] for intuitive navigation.
+This compact device is a custom built smartwatch featuring an ESP32 microcontroller.
+
+The device runs a custom firmware which is inluded in the repo under the firmware folder.
 
 ## Motivation
 
-<!-- TODO: Describe what motivated this project and any inspirations -->
-[Placeholder: Explain why you built this project, what problem it solves, and what inspired you.]
+My school recently banned smartwatches, so I decided to make my own, that is "dumb" enough that it would be allowed.
+
 
 ## Hardware Design
 
 ### Initial Sketch
 
-<!-- TODO: Add sketch image -->
-![Initial Sketch](images/sketch_placeholder.png)
+
+<img width="348" height="272" alt="image" src="https://github.com/user-attachments/assets/6fb3882b-43ee-46c2-be0d-6d05694fd80b" />
+<img width="348" height="272" alt="image" src="https://github.com/user-attachments/assets/26f6f140-6870-481b-9fe4-ea4edc0ab84a" />
+
+
+
 
 ### Case Design
 
-<!-- TODO: Describe the case design, materials, and print settings -->
-The case was designed to [DESCRIBE CASE DESIGN GOALS]. It's designed to be printed in [COLOR] that suits the [DISPLAY COLOR].
+The case was designed in onshape, it fits a small battery and the esp32 module itself
 
-[Placeholder: Describe your design process and any tools used (e.g., Tinkercad, Fusion 360).]
+Onshape project link: https://cad.onshape.com/documents/3428df8c7d261986fb7cca95/w/0c7e97bd99419912bdb89cec/e/683d611628950277cc38041f?renderMode=0&uiState=69df789f65c4cbf28e853c96
 
-Tinkercad project link: [PLACEHOLDER LINK]
+### Case:
+<img width="688" height="694" alt="image" src="https://github.com/user-attachments/assets/8e5b0126-7a99-4084-a6f6-6251948ee715" />
 
-<!-- TODO: Add printed case images -->
-![Case Image 1](images/case_1_placeholder.png)
-![Case Image 2](images/case_2_placeholder.png)
-![Case Image 3](images/case_3_placeholder.png)
+
+### Case Render:
+
+<img width="666" height="567" alt="image" src="https://github.com/user-attachments/assets/1e0886e8-38e0-46ca-909e-7c64373bd852" />
+
+
+
+
 
 **Assembly Requirements:**
-- [X]x M[SIZE] Countersunk Screws to secure the case
-- [PLACEHOLDER: List any other required hardware]
+Case is a snap on fit, with holes for M2 bolts for secure it.
+The watch band fits in, and secures in place with a retractable pin.
 
 ### 3D Models
 
 The CAD folder contains:
 - `Case.stl` - Main case body
-- `Button.stl` - Button component (if applicable)
+- `Lid.stl` - Button component (if applicable)
+With step files as well.
 
-<!-- TODO: Add 3D render image -->
-![3D Render](images/render_placeholder.png)
 
-## Features
 
-- **Touch Display:** [SIZE]-inch capacitive touch display with [RESOLUTION] resolution
-- **[UI LIBRARY] UI:** Modern smartwatch-style interface with [GESTURE] gestures
-- **Watch Face:** RTC-based timekeeping with clock display
-- **[APP 1]:** [Short description]
-- **[APP 2]:** [Short description]
-- **[APP 3]:** [Short description]
-- **Control Center:** [List controls available]
-- **Settings:** [List configurable settings]
-- **Power Management:** Screen timeout, low power mode, and battery monitoring
 
-<!-- TODO: Expand feature list as firmware is developed -->
-
-## Hardware Requirements
-
-| Component | Specification | Notes |
-|-----------|---------------|-------|
-| Development Board | [BOARD NAME] | Main board |
-| Display | [SIZE] [RESOLUTION] [DRIVER] | [Built-in / External] |
-| Touch | [TOUCH CONTROLLER] | [Built-in / External] |
-| Sensors | [LIST SENSORS] | [Notes] |
-| Battery | [VOLTAGE] [CAPACITY] LiPo | With [CONNECTOR TYPE] connector |
-| Storage | [STORAGE TYPE] | For [USE CASE] |
-
-<!-- TODO: Fill in all hardware specifications -->
 
 ## Wiring Diagram
 
-<!-- TODO: Add wiring diagram image or ASCII art -->
 
-```
-┌──────────────────────────────────────────────┐
-│            [BOARD NAME]                       │
-│  ┌──────────────────────────────────────┐    │
-│  │  ESP32 MCU + Display + Touch + ...  │    │
-│  └──────────────────────────────────────┘    │
-│                                               │
-│  Battery Connector ([CONNECTOR TYPE])         │
-│  ┌────┬────┐                                  │
-│  │ +  │ -  │ ◄────── [BATTERY]               │
-│  └────┴────┘                                  │
-│                                               │
-│  [OTHER CONNECTORS / PERIPHERALS]             │
-│                                               │
-└───────────────────────────────────────────────┘
-```
+Esp32 module battery pins <--- battery
 
-**Wiring Steps:**
 
-1. [PLACEHOLDER: Step 1]
-2. [PLACEHOLDER: Step 2]
-3. [PLACEHOLDER: Step 3]
 
-**Important Notes:**
-- [PLACEHOLDER: Add any important wiring or power notes]
-- [PLACEHOLDER: Add polarity warnings or connector notes]
 
-## Pin Configuration
+## Pins
 
-| Function | Pin |
-|----------|-----|
-| LCD Backlight | GPIO [XX] |
-| SPI MISO | GPIO [XX] |
-| SPI MOSI | GPIO [XX] |
-| SPI SCLK | GPIO [XX] |
-| LCD DC | GPIO [XX] |
-| I2C SDA | GPIO [XX] |
-| I2C SCL | GPIO [XX] |
-| Boot Button | GPIO [XX] |
-| [OTHER FUNCTION] | GPIO [XX] |
+<img width="960" height="629" alt="image" src="https://github.com/user-attachments/assets/008cb1f8-f401-4c25-abe7-dc19f6b483f1" />
 
-<!-- TODO: Fill in all pin assignments -->
+
+
 
 ## Software Dependencies
 
 Install these libraries via Arduino IDE Library Manager or PlatformIO:
 
-- `[LIBRARY 1]` - [Description]
-- `[LIBRARY 2]` - [Description]
-- `[LIBRARY 3]` - [Description]
-- `WiFi` (built-in)
-- `Wire` (built-in)
-- `Preferences` (built-in)
+- #include <WiFi.h> 
+- #include <time.h>
+- #include <HTTPClient.h>
+- #include <ArduinoJson.h>
+- #include <TFT_eSPI.h>
+- #include <lvgl.h>
+- #include "ui.h"
 
-<!-- TODO: List all required libraries with versions -->
+
 
 ## Configuration
 
-Before uploading, edit the following in `Firmware/main.ino`:
+Before uploading, edit the following in `Firmware/main.cpp`:
 
 ```cpp
-// WiFi Configuration
-const char* WIFI_SSID = "YOUR_WIFI_SSID";
-const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
+// --- Configuration ---
+const char* ssid = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
 
-// Time Configuration
-#define NTP_SERVER "pool.ntp.org"
-#define GMT_OFFSET_SEC [YOUR_OFFSET]
-#define DAYLIGHT_OFFSET_SEC [YOUR_DST_OFFSET]
-#define SCREEN_TIMEOUT_MS [TIMEOUT_IN_MS]
+// NTP Server Settings
+const char* ntpServer = "pool.ntp.org";
+const long  gmtOffset_sec = 0;           
+const int   daylightOffset_sec = 3600;   
+
+// Go to https://open-meteo.com/ to find coordinates for your exact city
+const String latitude = "51.5085";  
+const String longitude = "-0.1257"; 
 ```
 
-<!-- TODO: List any additional configuration options -->
 
-## Usage
-
-### Navigation
-
-- **[GESTURE 1]:** [Action]
-- **[GESTURE 2]:** [Action]
-- **[GESTURE 3]:** [Action]
-
-### Watch Face
-
-The watch face displays:
-- Current time in [12/24]-hour format
-- Date
-- Battery percentage
-- [OTHER INFO]
-
-### Home Screen
-
-<!-- TODO: Describe home screen layout and available apps -->
-[Placeholder: Describe home screen and app icons]
-
-### [App 1 Name]
-
-<!-- TODO: Describe app 1 -->
-[Placeholder: Describe this app's features and usage]
-
-### [App 2 Name]
-
-<!-- TODO: Describe app 2 -->
-[Placeholder: Describe this app's features and usage]
-
-### Control Center
-
-Access system controls:
-- [CONTROL 1]
-- [CONTROL 2]
-- [CONTROL 3]
-
-<!-- TODO: List all control center options -->
 
 ## Bill of Materials (BOM)
 
 | Component | Quantity | Price | Link |
 |-----------|----------|-------|------|
-| [BOARD NAME] | 1 | ~$[XX] | [Link] |
-| [BATTERY] | 1 | ~$[XX] | [Link] |
-| [SCREWS] | [X] | ~$[XX] | [Link] |
-| [OTHER COMPONENT] | [X] | ~$[XX] | [Link] |
+| [ESP32-S3 LCD Development Board] | 1 | ~$[17] | [[Link](https://fr.aliexpress.com/item/1005009281283730.html?spm=a2g0o.productlist.main.9.35842wgl2wglVw&algo_pvid=b4c70c90-0498-4b42-aeff-ed7fcbff31ab&algo_exp_id=b4c70c90-0498-4b42-aeff-ed7fcbff31ab-8&pdp_ext_f=%7B%22order%22%3A%2249%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%2135.34%2114.49%21%21%21275.45%21112.94%21%40211b6a7a17759113307988777e225f%2112000048597466064%21sea%21FR%217032395364%21X%211%210%21n_tag%3A-29919%3Bd%3Adbb9d545%3Bm03_new_user%3A-29895&curPageLogUid=SW4mfDLCXmv9&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005009281283730%7C_p_origin_prod%3A)] |
+| [BATTERY] | 1 | ~$[6] | [[Link](https://fr.aliexpress.com/item/1005008218024646.html?spm=a2g0o.productlist.main.8.1445iZNtiZNt0T&aem_p4p_detail=202604110539589198675540198000000552031&algo_pvid=0cce376b-4bec-4043-a592-2f3ee6e6eb36&algo_exp_id=0cce376b-4bec-4043-a592-2f3ee6e6eb36-7&pdp_ext_f=%7B%22order%22%3A%228282%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%2110.20%214.59%21%21%2179.50%2135.77%21%40211b813b17759111986552828ec4d1%2112000044269020516%21sea%21FR%217032395364%21X%211%210%21n_tag%3A-29919%3Bd%3Adbb9d545%3Bm03_new_user%3A-29895&curPageLogUid=LZ0KwnC232bj&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008218024646%7C_p_origin_prod%3A&search_p4p_id=202604110539589198675540198000000552031_2)] |
+| [Fabric Nylon Watch Band] | [1] | ~$[9.17] | [[Link](https://amzn.eu/d/0azpKPLg)] |
 
-<!-- TODO: Fill in complete BOM with current prices and purchase links -->
 
-## CAD Files
 
-The CAD folder contains the following files:
 
-### 3D Models
 
-- `Case.stl` - Main case body (ready for 3D printing)
-- `Button.stl` - Button component (ready for 3D printing)
-- `Case.step` - STEP file of case assembly
-- `Button.step` - STEP file of button component
-
-<!-- TODO: Add actual CAD files to the cad/ folder -->
-
-### Print Settings
-
-- **Material:** [MATERIAL] ([COLOR] recommended)
-- **Supports:** [Required / Not required]
-- **Infill:** [XX]% or higher
-
-### Assembly
-
-1. Print the main case body (`Case.stl`)
-2. Print the button component (`Button.stl`)
-3. Insert the [BOARD NAME] and battery
-4. Secure with [X]x M[SIZE] countersunk screws
-
-## Firmware
-
-The `firmware/` folder contains:
-
-- `main.ino` - Main Arduino sketch
-- [OTHER FILES] - [Description]
-
-<!-- TODO: Add firmware source files to the firmware/ folder -->
-
-## Images
-
-The `images/` folder contains:
-
-- Photos of the assembled device
-- Screenshots of the UI
-- Case renders and prints
-
-<!-- TODO: Add images to the images/ folder and update links throughout this README -->
-
-## Docs
-
-The `docs/` folder contains:
-
-- [DOCUMENT 1] - [Description]
-- [DOCUMENT 2] - [Description]
-
-<!-- TODO: Add any documentation, datasheets, or reference materials to the docs/ folder -->
-
-## License
-
-[PLACEHOLDER: Choose and add a license, e.g., MIT License]
-
-## Resources
-
-- [[BOARD] Documentation]([LINK])
-- [[UI LIBRARY] Documentation]([LINK])
-- [Arduino ESP32 Documentation](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
 
 <!-- TODO: Add links to all relevant datasheets and documentation -->
