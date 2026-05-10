@@ -2,6 +2,8 @@
 
 A small modern smartwatch style device built on ESP32.
 
+# Disclaimer: Not safe to wear in wet conditions.
+
 ## Description
 
 
