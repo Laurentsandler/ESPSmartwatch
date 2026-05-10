@@ -27,17 +27,17 @@ My school recently banned smartwatches, so I decided to make my own, that is "du
 
 ### Case Design
 
-The case was designed in onshape, it fits a small battery and the esp32 module itself
+The case was designed in onshape, it fits a small battery and the esp32 module itself, as well as a DHT 11 moisture and humidity sensor.
 
 Onshape project link: https://cad.onshape.com/documents/3428df8c7d261986fb7cca95/w/0c7e97bd99419912bdb89cec/e/683d611628950277cc38041f?renderMode=0&uiState=69df789f65c4cbf28e853c96
 
 ### Case:
-<img width="688" height="694" alt="image" src="https://github.com/user-attachments/assets/8e5b0126-7a99-4084-a6f6-6251948ee715" />
+
+<img width="774" height="522" alt="image" src="https://github.com/user-attachments/assets/ce6949b7-31d2-4788-b412-260fc6c6aa40" />
 
 
-### Case Render:
+<img width="774" height="522" alt="image" src="https://github.com/user-attachments/assets/276f6e6a-8e61-4efd-bf96-0f86b630a979" />
 
-<img width="666" height="567" alt="image" src="https://github.com/user-attachments/assets/1e0886e8-38e0-46ca-909e-7c64373bd852" />
 
 
 
@@ -46,12 +46,13 @@ Onshape project link: https://cad.onshape.com/documents/3428df8c7d261986fb7cca95
 **Assembly Requirements:**
 Case is a snap on fit, with holes for M2 bolts for secure it.
 The watch band fits in, and secures in place with a retractable pin.
+The DHT 11 snaps in place on top of the battery.
 
 ### 3D Models
 
 The CAD folder contains:
 - `Case.stl` - Main case body
-- `Lid.stl` - Button component (if applicable)
+- `Lid.stl` - Bottom cover 
 With step files as well.
 
 
@@ -62,6 +63,13 @@ With step files as well.
 
 
 Esp32 module battery pins <--- battery
+
+Esp32 module pin 11 <--- DHT Signal
+
+Esp32 module pin GND <--- DHT GND
+
+Esp32 module pin VCC <--- DHT VCC
+
 
 
 
