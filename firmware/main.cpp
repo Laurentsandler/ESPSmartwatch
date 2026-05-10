@@ -4,7 +4,12 @@
 #include <ArduinoJson.h>
 #include <TFT_eSPI.h>
 #include <lvgl.h>
+#include <DHT.h>
 #include "ui.h"
+
+#define DHTPIN 11
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
 
 // --- Configuration ---
 const char* ssid = "YOUR_WIFI_SSID";
@@ -12,21 +17,20 @@ const char* password = "YOUR_WIFI_PASSWORD";
 
 // NTP Server Settings
 const char* ntpServer = "pool.ntp.org";
-const long  gmtOffset_sec = 0;           // Update with your GMT offset in seconds
-const int   daylightOffset_sec = 3600;   // Update to 3600 if observing DST, otherwise 0
+const long  gmtOffset_sec = 0;           
+const int   daylightOffset_sec = 3600;   
 
-// Open-Meteo API Settings (Free, NO API KEY required!)
 // Go to https://open-meteo.com/ to find coordinates for your exact city
-const String latitude = "51.5085";  // Default: London
-const String longitude = "-0.1257"; // Default: London
+const String latitude = "51.5085";  
+const String longitude = "-0.1257"; 
 
 // Hardware Configuration
-static const uint16_t screenWidth  = 172; // Adjusted for your 1.47" screen
-static const uint16_t screenHeight = 320; // Adjusted for your 1.47" screen
+static const uint16_t screenWidth  = 172; 
+static const uint16_t screenHeight = 320; 
 
-TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); // Initialize TFT instance with correct dimensions
+TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); 
 
-/* LVGL display flush callback */
+
 void my_disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p) {
     uint32_t w = (area->x2 - area->x1 + 1);
     uint32_t h = (area->y2 - area->y1 + 1);
@@ -71,6 +75,10 @@ void setupTime() {
     }
 }
 
+void gettasks() {
+    
+}
+
 void updateTimeUI() {
     struct tm timeinfo;
     if (!getLocalTime(&timeinfo)) {
@@ -87,7 +95,7 @@ void updateTimeUI() {
     sprintf(minStr, "%02d", timeinfo.tm_min);
     sprintf(secStr, "%02d", timeinfo.tm_sec);
     
-    // Format full date (e.g., "Mon, Oct 23")
+    // Format full date 
     strftime(dateStr, sizeof(dateStr), "%a, %b %d", &timeinfo);
 
     // Update UI components (if they exist in SquareLine generated code)
@@ -116,11 +124,18 @@ void updateWeatherUI() {
         
         if (!error) {
             // Parse Open-Meteo JSON structure
-            float temp = doc["current_weather"]["temperature"];
+            float apiTemp = doc["current_weather"]["temperature"];
             float tempMin = doc["daily"]["temperature_2m_min"][0];
             float tempMax = doc["daily"]["temperature_2m_max"][0];
             // Optional: int weathercode = doc["current_weather"]["weathercode"];
             
+            // Read temperature from DHT11
+            float temp = dht.readTemperature();
+            if (isnan(temp)) {
+                Serial.println("Failed to read from DHT sensor!");
+                temp = apiTemp; // Fallback to Open-Meteo if DHT fails
+            }
+
             char tempStr[10];
             char tempMinStr[15];
             char tempMaxStr[15];
@@ -147,6 +162,7 @@ void updateWeatherUI() {
 
 void setup() {
     Serial.begin(115200);
+    dht.begin();
     
     // 1. Init TFT Display
     tft.begin();
@@ -195,7 +211,6 @@ void loop() {
     
     // Update time every second
     // The ESP32 automatically uses its internal RTC to keep time ticking
-    // even when WiFi is disconnected!
     if (currentMillis - lastTimeUpdate >= 1000) {
         updateTimeUI();
         lastTimeUpdate = currentMillis;
