@@ -107,11 +107,7 @@ const char* password = "YOUR_WIFI_PASSWORD";
 // NTP Server Settings
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 0;           
-const int   daylightOffset_sec = 3600;   
-
-// Go to https://open-meteo.com/ to find coordinates for your exact city
-const String latitude = "51.5085";  
-const String longitude = "-0.1257"; 
+const int   daylightOffset_sec = 3600;    
 ```
 
 
@@ -123,6 +119,7 @@ const String longitude = "-0.1257";
 | [ESP32-S3 LCD Development Board] | 1 | ~$[17] | [[Link](https://fr.aliexpress.com/item/1005009281283730.html?spm=a2g0o.productlist.main.9.35842wgl2wglVw&algo_pvid=b4c70c90-0498-4b42-aeff-ed7fcbff31ab&algo_exp_id=b4c70c90-0498-4b42-aeff-ed7fcbff31ab-8&pdp_ext_f=%7B%22order%22%3A%2249%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%2135.34%2114.49%21%21%21275.45%21112.94%21%40211b6a7a17759113307988777e225f%2112000048597466064%21sea%21FR%217032395364%21X%211%210%21n_tag%3A-29919%3Bd%3Adbb9d545%3Bm03_new_user%3A-29895&curPageLogUid=SW4mfDLCXmv9&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005009281283730%7C_p_origin_prod%3A)] |
 | [BATTERY] | 1 | ~$[6] | [[Link](https://fr.aliexpress.com/item/1005006584143607.html?mp=1&pdp_npi=6@dis!EUR!EUR%207.52!EUR%204.59!!EUR%204.59!!!@211b80e117762550188798675e117a!12000037729349745!ct!FR!7032395364!!1!0!&pdp_ext_f=%7B%22cart2PdpParams%22:%7B%22pdpBusinessMode%22:%22retail%22%7D%7D&gatewayAdapt=glo2fra)] |
 | [Fabric Nylon Watch Band] | [1] | ~$[9.17] | [[Link](https://amzn.eu/d/0azpKPLg)] |
+| DHT 11 | 1 | ~$[0.84] | [[link](https://fr.aliexpress.com/item/1005010003563013.html?spm=a2g0o.productlist.main.7.4c2a71f3zz5owS&algo_pvid=75a2229e-7c0e-4982-8465-7c6d65fe3421&algo_exp_id=75a2229e-7c0e-4982-8465-7c6d65fe3421-2&pdp_ext_f=%7B%22order%22%3A%22200%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21USD%210.76%210.84%21%21%210.76%210.84%21%4021038df617784379981244820ee5af%2112000050812014290%21sea%21FR%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3Adbb9d545%3Bm03_new_user%3A-29895&curPageLogUid=U5dvwVIg8gDI&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005010003563013%7C_p_origin_prod%3A)]
 
 
 
