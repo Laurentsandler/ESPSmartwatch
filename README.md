@@ -93,6 +93,7 @@ Install these libraries via Arduino IDE Library Manager or PlatformIO:
 - #include <ArduinoJson.h>
 - #include <TFT_eSPI.h>
 - #include <lvgl.h>
+- #include <DHT.h>
 - #include "ui.h"
 
 
