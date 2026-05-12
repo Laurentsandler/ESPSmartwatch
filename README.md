@@ -64,13 +64,9 @@ With step files as well.
 ## Wiring Diagram
 
 
-Esp32 module battery pins <--- battery
+<img width="1835" height="852" alt="image" src="https://github.com/user-attachments/assets/2f855467-2725-4ba9-b570-6c32b2237e74" />
 
-Esp32 module pin 11 <--- DHT Signal
 
-Esp32 module pin GND <--- DHT GND
-
-Esp32 module pin VCC <--- DHT VCC
 
 
 
